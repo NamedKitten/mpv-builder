@@ -11,7 +11,6 @@ before_install:
   - mkdir -p $HOME/.cache/apt/partial
   - sudo rm -rf /var/cache/apt/archives
   - sudo ln -s $HOME/.cache/apt /var/cache/apt/archives
-  - sudo apt-get update 
 
 install:
   - sudo apt-get -y install python3-pip libxpm-dev libcurl3 libcurl4-openssl-dev automake libtool desktop-file-utils nasm ccache libgl1-mesa-dev
