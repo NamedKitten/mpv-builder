@@ -1,4 +1,3 @@
-language: cpp
 compiler: gcc
 sudo: require
 dist: xenial
@@ -19,7 +18,8 @@ install:
   - sudo apt-get build-dep libmpv1
 script:
   - wget https://raw.githubusercontent.com/NamedKitten/KittehPlayer/master/scripts/build-deps.sh
-  - UPLOAD=1 bash build-deps.sh
+  - chmod +x build-deps.sh
+  - UPLOAD=1 ./build-deps.sh
   
 branches:
   except:
