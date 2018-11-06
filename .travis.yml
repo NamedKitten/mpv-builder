@@ -19,7 +19,7 @@ install:
   - sudo apt-get build-dep libmpv1
 script:
   - wget https://raw.githubusercontent.com/NamedKitten/KittehPlayer/master/scripts/build-deps.sh
-  - UPLOAD=1 bash build-mpv.sh
+  - UPLOAD=1 bash build-deps.sh
   
 branches:
   except:
