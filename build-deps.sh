@@ -19,7 +19,7 @@ rm -rf ffmpeg mpv libass
 
 echo "--disable-programs --disable-runtime-cpudetect --disable-asm --disable-sdl2 --enable-small --disable-hwaccels --disable-filters" > ffmpeg_options
 echo "--enable-libmpv-shared --prefix=/usr --disable-vapoursynth --enable-lgpl" > mpv_options
-echo "--disable-cplayer --disable-caca --disable-wayland --disable-gl-wayland --disable-libarchive  --disable-zlib --disable-tv --disable-debug-build --disable-manpage-build --disable-libsmbclient --disable-wayland --disable-sdl --disable-sndio --enable-plain-gl" >> mpv_options
+echo "--disable-caca --disable-wayland --disable-gl-wayland --disable-libarchive  --disable-zlib --disable-tv --disable-debug-build --disable-manpage-build --disable-libsmbclient --disable-wayland --disable-sdl --disable-sndio --enable-plain-gl --disable-cplugins" >> mpv_options
 
 ./use-mpv-release
 ./use-ffmpeg-release
