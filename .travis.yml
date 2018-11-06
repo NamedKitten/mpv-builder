@@ -15,7 +15,7 @@ before_install:
 
 install:
   - sudo apt-get -y install python3-pip libxpm-dev libcurl3 libcurl4-openssl-dev automake libtool desktop-file-utils nasm ccache libgl1-mesa-dev
-  - sudo apt-get -y install libavutil-dev libbs2b-dev libegl1-mesa-dev libgl1-mesa-dev libguess-dev liblcms2-dev liblua5.2-dev libpulse-dev librubberband-dev libswscale-dev libx11-dev libxinerama-dev libxkbcommon-dev libxrandr-dev libxss-dev libxv-dev zlib1g-dev libmp3lame-dev libopus-dev libx264-dev libx265-dev libtheora-dev libtwolame-dev libpulse-dev libopenjpeg-dev libass-dev libgme-dev libwavpack-dev libfribidi-dev libvpx-dev
+  - sudo apt-get -y install libegl1-mesa-dev libgl1-mesa-dev liblcms2-dev liblua5.2-dev libpulse-dev librubberband-dev libx11-dev libxinerama-dev libxkbcommon-dev libxrandr-dev libxss-dev libxv-dev zlib1g-dev libmp3lame-dev libopus-dev libx264-dev libx265-dev libtheora-dev libpulse-dev libass-dev libfribidi-dev libvpx-dev
 
 script:
   - UPLOAD=1 ./build-deps.sh
