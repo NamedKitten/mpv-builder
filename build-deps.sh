@@ -3,9 +3,11 @@ set -x
 
 export OLDDIR=`pwd`
 export PATH="/usr/lib/ccache:/usr/lib/ccache/bin:$PATH"
-
-export CFLAGS="-Os -pipe -fvtable-gc -ffunction-sections -fdata-sections -Wl,--gc-sections -Wl,--build-id=none -Wl,--hash-style=gnu -Wl,-z,norelro -flto=8"
-export LDFLAGS="-fuse-linker-plugin"
+export AR="gcc-ar"
+export NM="gcc-nm"
+export RANLIB="gcc-ranlib"
+export CFLAGS="-Os -pipe -fvtable-gc -ffunction-sections -fdata-sections -Wl,--gc-sections -Wl,--build-id=none -Wl,--hash-style=gnu -Wl,-s,-flto-z,norelro -flto=8"
+export LDFLAGS="-fuse-linker-plugin -flto"
 mkdir -p ~/.cache/deps
 
 
