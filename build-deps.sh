@@ -30,6 +30,7 @@ if [[ "${UPLOAD}" ]]; then
 cd mpv
 python waf -v install --destdir=~/.cache/deps
 cd ~/.cache/deps
+strip -S --strip-unneeded --remove-section=.note.gnu.gold-version --remove-section=.comment --remove-section=.note --remove-section=.note.gnu.build-id --remove-section=.note.ABI-tag usr/lib/*
 rm -rf deps.tar.xz
 tar caf deps.tar.xz * 
 wget https://github.com/probonopd/uploadtool/raw/master/upload.sh
