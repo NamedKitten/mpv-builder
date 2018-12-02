@@ -4,8 +4,8 @@ set -x
 export OLDDIR=`pwd`
 export PATH="/usr/lib/ccache:/usr/lib/ccache/bin:$PATH"
 
-export CFLAGS="-Os -pipe -fvtable-gc -ffunction-sections -fdata-sections -Wl,--gc-sections -Wl,--build-id=none -Wl,--hash-style=gnu -Wl,-z,norelro"
-
+export CFLAGS="-Os -pipe -fvtable-gc -ffunction-sections -fdata-sections -Wl,--gc-sections -Wl,--build-id=none -Wl,--hash-style=gnu -Wl,-z,norelro -flto=8"
+export LDFLAGS="-fuse-linker-plugin"
 mkdir -p ~/.cache/deps
 
 
