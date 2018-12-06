@@ -15,7 +15,7 @@ cd mpv-build
 export MPVDIR=`pwd`
 
 rm -rf ffmpeg mpv libass
-echo "--disable-programs --disable-runtime-cpudetect --disable-asm --disable-sdl2 --enable-small --disable-hwaccels --disable-debug --disable-filters --disable-postproc --disable-hwaccels --disable-encoders" > ffmpeg_options
+echo "--disable-programs --enable-runtime-cpudetect --enable-asm --disable-sdl2 --disable-debug" > ffmpeg_options
 echo "--enable-libmpv-shared --prefix=/usr --disable-vapoursynth --enable-lgpl --disable-drm --disable-drmprime --disable-lcms2" > mpv_options
 echo "--disable-caca --disable-wayland --disable-gl-wayland --disable-libarchive  --disable-zlib --disable-tv --disable-debug-build --disable-manpage-build --disable-libsmbclient --disable-wayland --disable-sdl --disable-sndio --enable-plain-gl --disable-cplugins" >> mpv_options
 
@@ -30,6 +30,7 @@ if [[ "${UPLOAD}" ]]; then
 cd mpv
 python waf -v install --destdir=~/.cache/deps
 cd ~/.cache/deps
+cp $MPVDIR/build_libs/* . -rvf
 strip -S --strip-unneeded --remove-section=.note.gnu.gold-version --remove-section=.comment --remove-section=.note --remove-section=.note.gnu.build-id --remove-section=.note.ABI-tag usr/lib/*
 rm -rf deps.tar.xz
 tar caf deps.tar.xz * 
